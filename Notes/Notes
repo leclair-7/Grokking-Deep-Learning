@@ -1,0 +1,103 @@
+DL is a subset of ML
+
+what are 3 primary domains in which DL used/researched?
+CV, NLP, speech recognition
+
+
+
+ML - not explicitly programmed
+ML algorithms observe a pattern and attempt to directly or indirectly imitate the task
+
+What do directly or indirectly  correspond to?
+supervised and nonsupervised learning
+
+supervised - the direct imitation of a pattern between two datasets
+take input dataset and output output dataset
+
+transforming what you know into what you want to know
+
+
+
+machine learning has
+supervised and unsupervised
+parametric and nonparametric
+
+supervised learning transforms datasets
+unsupervised groups datasets
+
+parametric and nonparametric say how the learning is stored and by extension how the model learns patterns
+
+parametric - fixed number of parameters - trial and error
+
+nonparametric - infinite (determined by the data) - counts
+
+how does this apply to fitting the square peg in the right hole?
+nonparametric counts the number of corners
+parametric trial and error
+
+
+supervised parametric (pg15 predicting will red sox win) can be thought of as a search problem, want to get all the knobs in the best position
+	- predict, compare to truth, learn from pattern
+
+unsupervised parametric-
+looks like decide number of groups
+ adjust parameters  so the datapoint fits the right group
+
+nonparametric 
+oversimplified, counting
+3 lights and in each combo of lights on/off has stop or go
+
+
+parameters, a generic term, set of numbers used to model a pattern
+
+present enough (what you would show a human to make the same prediction) to the network
+
+"number of columns in the input set" or "number of datapoints processing at once"
+
+
+
+nonparametric counts new things or adds new knobs when it sees something new
+
+
+
+
+
+###########
+
+
+What is a NN? one or more weights we multiple by the input to make a prediction
+
+the interface?
+
+input as information, weight variables as knowledge, outputs a prediction
+
+think of the weight value as sensitivity
+
+when you take two vectors of same length and do a similar operation on both, it's called an elementwise operation
+
+
+dot product gives a notion of similarity between two vectors
+
+Dot product properties
+[1,0,1,0]
+[0,1,1,0]
+if it has value or doesn't, think of that as logical AND
+
+[.5,0,1,0]
+[-1,1,1,0]
+think of negative as logical NOT
+
+so think of these as:
+(a[0] AND b[0]) OR (a[1] AND b[1]) OR (a[2] AND b[2]) OR (a[3] AND b[3])
+
+
+##########
+
+pg around 39 --> 
+explain how to use 1 datapoint to predict multiple things
+use multiple datapoints to predict 1 thing
+use multiple datapoints to predict multiple things 
+
+matrix multiplication
+take input and dor product it with each vector of the weight matrix to predict all the different things
+
