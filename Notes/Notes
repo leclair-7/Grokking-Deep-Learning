@@ -101,3 +101,40 @@ use multiple datapoints to predict multiple things
 matrix multiplication
 take input and dor product it with each vector of the weight matrix to predict all the different things
 
+
+
+reading numpy code is all about reading operations and keeping track of shape
+
+squaring the error amplifies the high scores and reduces the smaller error
+why not just take abs(ground_truth - pred)?
+pg 52 why keep error positive?
+
+
+
+
+
+
+
+
+Pro Git
+Grokking DL
+Concrete mathematics
+Cooking
+
+If on a win
+
+good at job
+DL researcher can read implement a paper in < 1 day,
+core contributor in OpenMined
+wit, worldlyness from internalizing breathing books
+storyteller stage presence
+flient in french
+art of french cooking
+
+
+
+write some, a goal is erudition, we'll start by defining it
+if on a winters night (immerse and finish this beautiful novel)
+Branching chapter of the pro git
+
+Grokking DL
