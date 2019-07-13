@@ -111,6 +111,151 @@ pg 52 why keep error positive?
 
 
 
+Mean Squared Error
+(pred - true_val) ** 2 
+
+node delta - (pred - true_val) 
+
+stopping
+negative reversal
+
+
+number_of_toes = [8.5]
+win_or_lose_binary = [1] # (won!!!)
+
+input = number_of_toes[0]
+goal_pred = win_or_lose_binary[0]
+
+pred = neural_network(input,weight)
+error = (pred - goal_pred) ** 2
+
+prediction = .85
+(network was too low by .15)
+node_delta = -.15
+
+# how much a weight caused network to miss
+weight_delta = input * delta
+"scaling output node's delta with input to the weigh"t
+
+
+For any input and goal_pred, the exact relationship is defined between error and weight
+error = ((input * weight) - .8) ** 2
+
+pg 61 profound
+
+
+pg 64: thought experiments
+change goal (goal_pred) of the model... "giving up"
+change input and error to 0, see world how you want it (inception)
+error calc meaningless if doesn't give a good measure of how much you missed
+
+p65
+changing weights means the function conforms to the patterns of the data
+since the rest of the function is not changing (besides weight) force function to correctly model a pattern in the data; only allowed to model how the function predicts,
+
+therefore you modify specific parts of the error function, in this case
+error = ((input * weight) - goal_pred) ** 2
+until the error is zero
+
+you can't change input
+
+
+
+
+understanding the relationship between weight and error
+if you do, know how to adjust weight to reduce error
+== how changing one var changes the other var == sensitivity(direction and amount) between the two variables
+
+derivative == "when I change red rod, this is how much the blue rod changes"
+there's always a derivative between 2 variables
+
+With derivatives, you can pick 2 vars in any formula and know how they interact
+
+neural network, a bunch of weights used to compute error
+
+can compute relationship between weight and error
+with that we can change each weight in NN to reduce weight to zero
+
+derivative is the sensitivity between two variables
+
+
+
+
+
+
+pg 70 (having trouble understanding it)
+
+weight = 0.0
+goal_pred = 0.8
+input = 1.1
+
+for iteration in range(4):
+    pred = input * weight
+    print(pred)
+    error = (pred - goal_pred) ** 2
+    
+    delta = pred - goal_pred
+    weight_delta = delta * input
+    weight = weight - weight_delta
+
+    print("Error:" + str(error) + " Prediction:" + str(pred))
+
+
+in this ex, we're relating weight and error, to get weight closer
+(pred - goal_pred) * input
+think of it like we're doing 2 different things
+
+
+
+pg 83
+delta is how much you want node's output to be different
+how to transform delta to weight_ delta (multiply by the input)
+
+
+each input has a common delta and a unique input (weight_delta = input * delta )
+
+weight - error curves represent how input contributes to error 
+
+89
+if you freeze one weight, train without it (weight_delta[i] = 0), NN learns data without it
+error for the froze weight still goes to zero
+if you unfreeze well error is already low so it won't use that weight much  
+In effect these weight - error curves are 2D slices of a 4D graph ( in this case 3 weight, and error dimension)
+curvature of the error plane is decided by the training data
+
+
+
+
+pg 95
+What does it mean to modify a bunch of weights to learn a pattern in aggregate
+
+
+p 97
+a dot product is a loose measurement of similarity between 2 vectors
+
+pg 101
+learned pattern by observing all the datapoints and searching for correlation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -118,8 +263,8 @@ pg 52 why keep error positive?
 
 Pro Git
 Grokking DL
-Concrete mathematics
-Cooking
+squadx_exp memorize current tasks, high level understand of everything else
+Cooking Science
 
 If on a win
 
