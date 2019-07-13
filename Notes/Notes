@@ -237,6 +237,87 @@ pg 101
 learned pattern by observing all the datapoints and searching for correlation
 
 
+pg 103
+matrix structure
+recorded example get a row, each state being recorded is a single column (on-off state for each light)
+
+
+can have [.9 0 1]
+can have [18 0 20]
+underlying pattern isn't the same as the matrix, it's a property of the matrix
+the pattern is what each matrix is expressing
+
+input data pattern is what you want NN to transform to the output data pattern
+
+convert stop-walk outputs to 0, 1
+lossless representation because we can convert back and forth
+
+
+
+pg 106 
+goal of NN --> take the streetlights (input dataset) and transform it to a walk_vs_stop output dataset
+
+
+
+pg 109
+stochastic gradient descent - updates weights 1 example at a time
+(full) gradient descent - updates weights weights 1 dataset at a time (network calculates an average changing weights only when it computes the full average)
+batch gradient descent - updates weights after k examples
+
+if NN has 3 weights .01, 1.0, -.0001, it identified correlation of middle weight and result
+each node trying to correctly predict output given the input
+cross communication is when all 3 weights share same error measure
+Error attribution: Given a shared error, NN needs to  figure out which weights contributed to error (seems like it's an after effect of 
+weight_new = weight_prev - alpha * input * (weight * input - goal)
+
+input_vec = [1, 0, 1] ===> middle weight has zero effect on the prediction 
+
+suppose
+input = [1, 0, 1] goal = [0]
+0 is irrelevant therefore weights associated with 1's have to be low for model to predict correctly to drive the weight to zero
+
+pg 111
+"weight pressure table"
+
+rewarding correlation with pressure on its weighttowards 1 and penalizing decorrelation with pressure toward zero
+
+Remember
+learning rewards correlation with higher weights
+learning finds correlation between two datasets
+
+
+pg 113
+If a combination of weight[i] * input[i] perfectly classifys dataset, model stops learning, if it does this without giving heaviest weights to best inputs NN stops learning | overfitting is ML's greatest enemy
+
+pg 113
+greatest challenge in DL is convincing NN to generalize instead of memorize
+
+pg 115
+Regularization is advantageous because if a weight has equal pressure upward and downward it's useless; basically says only weights with strong correlation stay on
+
+(on the stoplights example ch 6)
+Without regularization you wouldn't learn right weight is useless until left and middle find their correlations
+
+
+pg 115
+no correlation
+Dataset is the real problem in machine learning
+
+
+It was first presented that neural networks search for correlation between input and output datasets
+Let's refine that definition: In reality, NN search for correlation between their input and output layers
+
+
+pg 116
+dataset doesn't correlate with output
+solution: use the input dataset to create an intermediate dataset that does have correlation with output. It's kind of like cheating
+pg 117: this network is still a function, just a bunch of weights collected together
+
+reread pg 119-121
+
+
+pg 131
+predicting cats, individual pixels have nothing to do with whether or not it is a cat. Only different configurations of pixels correlate with whether there's a cat
 
 
 
@@ -259,6 +340,50 @@ learned pattern by observing all the datapoints and searching for correlation
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+goal for today is pg 229 | learn hard, review, keep going when don't wanna 
+duolingo for 200 points and a pen
 
 
 Pro Git
